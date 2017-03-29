@@ -11,7 +11,13 @@
 
 <body>
 
-<button type="button" class="btn btn-info" id="price" onclick="sortByPrice()">Sort by price</button>
+<button type="button" class="btn btn-info" onclick="orderBy('name')" >Sort by name</button>
+<button type="button" class="btn btn-info"  onclick="orderBy('price')" >Sort by price</button>
+<input type="text" id="name" value="name">
+<input type="number" id="productPrice">
+<label for="outputNumber">Limit</label>
+<input type="number" id="outputNumber">
+<button type="button" class="btn btn-info" id="submit" onclick="submit()">submit</button>
 <div class="container-fluid" style="margin-top:3%;">
       <table class="table">
         <thead class="thead-inverse">
@@ -29,6 +35,7 @@
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
   <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
   <script>
   // Initialize Firebase
