@@ -1,14 +1,19 @@
-var table = document.getElementById("table");
-
+window.onload = function(){
+  var table = document.getElementById("table");
+}
 function submit(){
   let price = document.getElementById("price");
   let fb = firebase.database();
   var productName= document.getElementById("name");
   var productPrice = document.getElementById("productPrice");
+ var currDate = new Date();
+
   var product = {
     name: productName.value,
-    price: Number(productPrice.value)
+    price: Number(productPrice.value),
+    date: currDate
   }
+debugger
   fb.ref('products/').push(product);
 }
 //orderBy('name')
@@ -20,11 +25,12 @@ function orderBy(key){
   .then(function(snapshot){
     //after snapshot that get all values then can clean
     let table = document.getElementById("table");
+
     table.innerHTML = "";
     snapshot.forEach(function(child){
       let tr = document.createElement("tr");//child is a object, child.key to get id
       tr.innerHTML = `<td>${child.val().name}</td>
-      <td>${child.val().price}</td>`
+      <td>${child.val().price}</td><td>${child.val().date}</td>`
       table.appendChild(tr);
       // console.log(child.val())//object child/hela object  child.val  object
     })

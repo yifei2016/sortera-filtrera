@@ -11,26 +11,49 @@
 
 <body>
 
-<button type="button" class="btn btn-info" onclick="orderBy('name')" >Sort by name</button>
-<button type="button" class="btn btn-info"  onclick="orderBy('price')" >Sort by price</button>
-<input type="text" id="name" value="name">
-<input type="number" id="productPrice">
-<label for="outputNumber">Limit</label>
-<input type="number" id="outputNumber">
-<button type="button" class="btn btn-info" id="submit" onclick="submit()">submit</button>
-<div class="container-fluid" style="margin-top:3%;">
-      <table class="table">
-        <thead class="thead-inverse">
-          <tr>
-            <th>Name</th>
-            <th>price</th>
-          </tr>
-        </thead>
-        <tbody id="table">
-        </tbody>
-      </table>
- </div>
+    <div class="container" style="margin-top:3%;">
+      <div class="row d-flex justify-content-center">
+        <div>
+          <div class="form-group">
+            <label for="outputNumber">Name</label>
+            <input type="text" id="name">
+          </div>
+          <div class="form-group">
+            <label for="productPrice">Price</label>
+            <input type="number" id="productPrice">
+          </div>
+          <div class="form-group">
+            <label for="outputNumber">Limit</label>
+            <input type="number" id="outputNumber">
+          </div>
+          <button type="button" class="btn btn-success" id="submit" onclick="submit()">submit</button>
+        </div>
+      </div>
+    <div class="row d-flex justify-content-center" style="margin-top:3%;">
+      <button type="button" class="btn btn-info" onclick="orderBy('name')" style="margin-right:3%;" >Sort by name</button>
+      <button type="button" class="btn btn-info"  onclick="orderBy('price')">Sort by price</button>
+    </div>
+  </div>
 
+
+  <div class="container-fluid" style="margin-top:3%;">
+    <table class="table">
+      <thead class="thead-inverse">
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody id="table">
+      </tbody>
+    </table>
+  </div>
+
+  <nav aria-label="Page navigation example" class="d-flex justify-content-center" style="margin-top:3%;">
+    <ul class="pagination" id="pagination">
+    </ul>
+  </nav>
 
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
