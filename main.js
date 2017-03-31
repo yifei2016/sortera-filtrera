@@ -6,15 +6,15 @@ function submit(){
   let fb = firebase.database();
   var productName= document.getElementById("name");
   var productPrice = document.getElementById("productPrice");
- var currDate = new Date();
-
+ // var currDate = new Date();
   var product = {
     name: productName.value,
     price: Number(productPrice.value),
-    date: currDate
+    // date: currDate.toLocaleString()
+    date: moment().format('MM-DD-YYYY, h:mm:ss')
   }
-debugger
   fb.ref('products/').push(product);
+  debugger
 }
 //orderBy('name')
 function orderBy(key){
