@@ -14,7 +14,6 @@ function submit(){
     date: moment().format('MM-DD-YYYY, h:mm:ss')
   }
   fb.ref('products/').push(product);
-  debugger
 }
 //orderBy('name')
 function orderBy(key){
@@ -25,14 +24,13 @@ function orderBy(key){
   .then(function(snapshot){
     //after snapshot that get all values then can clean
     let table = document.getElementById("table");
-
     table.innerHTML = "";
     snapshot.forEach(function(child){
       let tr = document.createElement("tr");//child is a object, child.key to get id
       tr.innerHTML = `<td>${child.val().name}</td>
       <td>${child.val().price}</td><td>${child.val().date}</td>`
       table.appendChild(tr);
-      // console.log(child.val())//object child/hela object  child.val  object
+      console.log(child.val())//object child/hela object  child.val  object
     })
   })
   .catch(function(err){
